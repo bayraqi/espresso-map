@@ -49,9 +49,10 @@ export default function EventOverlay() {
       setSelectedEvent(ev);
 
       const basePadding = { top: 24, bottom: 24, left: 24, right: 24 } as const;
-      const newPadding: PaddingOptions = { ...basePadding };
-      if (side === "right") newPadding.right = panelWidth + 24;
-      else newPadding.left = panelWidth + 24;
+      const newPadding: PaddingOptions =
+        side === "right"
+          ? { ...basePadding, right: panelWidth + 24 }
+          : { ...basePadding, left: panelWidth + 24 };
       const offsetX = side === "right" ? -panelWidth / 4 : panelWidth / 4;
 
       map.easeTo({

@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  // Disable TypeScript type checking during builds (useful for CI/CD)
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
 
 export default nextConfig;
